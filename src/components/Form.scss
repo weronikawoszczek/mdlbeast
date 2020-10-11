@@ -1,0 +1,39 @@
+@import '../assets/scss/helpers/variables';
+
+.ticket-dialog {
+  border-radius: 0;
+
+  .modal-body {
+    padding: 0;
+    background-color: #808285;
+  }
+
+  .ticket-link {
+    text-align: right;
+    font-family: $font-secondary;
+    font-size: 1rem;
+    color: #d1d3d4;
+    svg {
+      margin-left: 5px;
+      width: 15px;
+
+      &.close {
+        margin-top: 2px;
+        margin-left: 15px;
+      }
+    }
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+
+  .img-container {
+
+    padding: 20px;
+
+    img {
+      -webkit-box-shadow: -1px 0px 5px 10px rgba(0,0,0,0.05);
+      -moz-box-shadow: -1px 0px 5px 10px rgba(0,0,0,0.05);
+      box-shadow: -1px 0px 5px 10px rgba(0,0,0,0.05);
+    }
+  }
+}

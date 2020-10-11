@@ -1,0 +1,489 @@
+html {
+  overflow-x: hidden;
+  width: 100vw;
+}
+
+body {
+  font-family: $font-main;
+  font-size: 16px;
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: normal;
+  background-color: $main;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 2;
+    background: url("./../../img/background.png") no-repeat center center fixed;
+    background-size: cover;
+  }
+}
+
+.content {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  padding: 20px;
+  color: white;
+
+  span, p {
+    font-family: $font-secondary;
+  }
+
+  .logo {
+    width: 190px;
+  }
+
+  h3 {
+    font-size: 35px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .desc {
+    font-size: 12px;
+    letter-spacing: 1px;
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 100px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0.3em 0 5px 0;
+    line-height: 1;
+    padding-left: 5px;
+    text-align: center;
+  }
+
+  .date {
+    font-size: 40px;
+    margin: 0 0 25px 0;
+    line-height: 1;
+  }
+
+  .main-container {
+    min-height: 350px;
+    width: 680px;
+    box-shadow: 5px 5px 40px -15px $main-3;
+    background-color: $main;
+    z-index: 4;
+  }
+
+  .first-row {
+    height: 40px;
+    width: 100%;
+    display: flex;
+  }
+
+  .column {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 2px 6px;
+
+    &-gray {
+      background-color: $aux;
+      position: relative;
+      &::before {
+        content: '';
+        z-index: 4;
+        position: absolute;
+        left:0;
+        bottom:0;
+        height: 100%;
+        width: 35px;
+        opacity: .7;
+        background-image: linear-gradient(to top right, $main-3 , $aux);
+      }
+    }
+
+    &-fifth {
+      .number{
+        width: 38px;
+      }
+    }
+
+    h5 {
+      font-size: 10px;
+      letter-spacing: 5px;
+      margin: 0;
+      padding-top: 5px;
+      font-weight: bold;
+      z-index: 10;
+      &.main {
+        font-size: 11px;
+        letter-spacing: 6px;
+        margin-left: 3px;
+      }
+    }
+
+    .number {
+      font-size: 35px;
+      margin: 0 8px 0 5px;
+      z-index: 5;
+    }
+  }
+
+  .main-row {
+    padding: 30px 15px;
+  }
+
+  .main-row-title {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    display: block;
+    font-weight: lighter;
+    letter-spacing: 1px;
+  }
+
+  p {
+    color: black;
+    font-size: 12px;
+    margin-bottom: .5rem;
+  }
+
+  .form-row {
+    font-family: $font-secondary;
+    display: flex;
+    margin: 15px 0 0;
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    input {
+      margin-bottom: 8px;
+      border-radius: 0;
+      width: 300px;
+      background-color: #da6e7f;
+      border: 0;
+      height: 38px;
+      padding: .375rem 10px;
+      margin-right: 10px;
+
+      &::placeholder {
+        color: #d1d3d4;
+        font-size: 15px;
+      }
+    }
+
+    .select-div {
+      width: 150px;
+      background-color: #da6e7f;
+      position: relative;
+      height: 38px;
+      margin-bottom: 8px;
+      &::after {
+        content: '';
+        position: absolute;
+        right: 8px;
+        top: 45%;
+        display: inline-block;
+        cursor: pointer;
+        pointer-events: none;
+        width: 0;
+        height: 0;
+        z-index: 5;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 10px solid $aux;
+      }
+    }
+
+    .select-form {
+      border: 0;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 0;
+      background-color: transparent;
+      padding: 0px 10px;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: 400;
+      line-height: 1.5;
+      color: #d1d3d4;
+      -moz-appearance:none; /* Firefox */
+      -webkit-appearance:none; /* Safari and Chrome */
+      appearance:none;
+    }
+
+    .submit-button {
+      padding: 10px 0 5px 0.75rem;
+      border: 0;
+      border-radius: 0;
+      color: #fff;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 4px;
+      font-family: $font-main;
+      font-size: 13px;
+      opacity: 1;
+      width: 150px;
+      height: 38px;
+      cursor: pointer;
+      background-color: $aux;
+      background-image: url("../../img/plane-icon.png");
+      background-size: 28px;
+      background-position: 95% 50%;
+      text-align: left;
+      background-repeat: no-repeat;
+
+      &:hover{
+        background-color: #d5a5ae;
+        color: $aux;
+      }
+    }
+
+    .invalid-feedback{
+      color: #d5a5ae;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+  }
+
+  .registration-alert{
+    font-size: 18px;
+    color: #fff;
+    margin: 5px 0 15px;
+    background-image: url("../../img/exclamation-triangle-solid.svg");
+    background-size: 25px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+    padding-left: 34px;
+  }
+}
+
+@media (max-width: 900px) {
+  .content {
+
+    .main-container{
+      width: 650px;
+    }
+
+    .column {
+      h5, h5.main {
+        font-size: 11px;
+      }
+      .number{
+        font-size: 26px;
+      }
+    }
+
+    .main-row {
+      .main-row-title, p {
+        font-size: 25px;
+      }
+    }
+
+    .form-row {
+      form{
+        margin-top: 10px;
+        width: 100%;
+        position: relative;
+        padding-bottom: 51px;
+        flex-direction: column;
+      }
+
+      #field{
+        &-1{
+          order: 1;
+        }
+        &-2{
+          order: 3;
+        }
+        &-3{
+          order: 2;
+        }
+        &-4{
+          order: 4;
+        }
+        &-5{
+          order: 5;
+        }
+        &-6{
+          order: 7;
+        }
+        &-7{
+          order: 6;
+        }
+      }
+
+      input {
+        width: 100%;
+        height: 60px;
+        font-size: 30px;
+        &::placeholder{
+          font-size: 25px;
+        }
+      }
+      .select-div{
+        width: 100%;
+        height: 60px;
+      }
+      .select-form{
+        width: 100%;
+        font-size: 25px;
+      }
+      .submit-button{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 50px;
+        letter-spacing: 5px;
+        width: 200px;
+        background-size: 30px;
+        font-size: 18px;
+      }
+      .invalid-feedback{
+        font-size: 20px;
+      }
+    }
+    .registration-alert{
+      font-size: 25px;
+      margin: 10px auto 30px;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .content {
+
+    h1 {
+      font-size: 55px;
+      margin: 35px 0 15px 0;
+    }
+
+    .date {
+      font-size: 25px;
+    }
+
+    .main-container {
+      width: 100%;
+    }
+
+    .first-row{
+      flex-wrap: wrap;
+      height: auto;
+    }
+
+    .column {
+      display: flex;
+
+      &-first{
+        width: 100%;
+        padding: 25px 15px;
+        margin-bottom: 0;
+      }
+
+      &-gray{
+        width: 50%;
+        padding: 2px;
+      }
+
+      h5, h5.main {
+        font-size: 11px;
+        z-index: 10;
+        padding-top: 7px;
+      }
+
+      .number{
+        font-size: 30px;
+        margin: 0 8px 0 6px;
+        width: 30px;
+      }
+    }
+
+    .main-row {
+      padding-top: 25px;
+    }
+
+    .form-row{
+
+      input, .select-form{
+        font-size: 20px;
+      }
+
+      input {
+        &::placeholder {
+          font-size: 20px;
+        }
+      }
+
+      .submit-button{
+        width: 100%;
+        background-position: 96% 50%;
+        text-align: center;
+      }
+
+      .registration-alert{
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 374px) {
+  .content {
+
+    h1 {
+      font-size: 50px;
+    }
+
+    .main-row{
+      p {
+        font-size: 22px;
+      }
+    }
+
+    .column {
+      .number {
+        font-size: 22px;
+      }
+    }
+
+    .form-row {
+      input, .select-div {
+        height: 50px;
+      }
+
+      .select-form{
+        font-size: 16px;
+      }
+
+      input {
+        &::placeholder {
+          font-size: 16px;
+        }
+      }
+
+      .registration-alert{
+        font-size: 16px;
+      }
+    }
+  }
+}
